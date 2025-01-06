@@ -1,0 +1,24 @@
+To avoid this issue, it's better to use selectors that specifically target list items. Here are two solutions:
+
+**1. Using `:nth-of-type`:**
+This selector counts only elements of a specific type. In this case, it will only count `<li>` elements, avoiding the issue with mixed elements.
+```css
+li:nth-of-type(even) {
+  background-color: #f0f0f0;
+}
+```
+**2. Using a different approach altogether**
+Sometimes avoiding `:nth-child` entirely is the best approach. Here we use a class to apply styling to even list elements. This approach is more maintainable.
+```html
+<ul>
+  <li class="even">Item 1</li>
+  <li>Item 2</li>
+  <li class="even">Item 3</li>
+  <li>Item 4</li>
+</ul>
+```
+```css
+li.even {
+  background-color: #f0f0f0;
+}
+```
