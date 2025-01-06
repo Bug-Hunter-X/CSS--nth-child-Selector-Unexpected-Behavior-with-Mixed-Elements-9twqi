@@ -1,0 +1,7 @@
+The CSS rule `:nth-child(n)` selector may lead to unexpected behavior if not used carefully.  Consider the following example where we want to style every other list item. 
+```css
+li:nth-child(even) {
+  background-color: #f0f0f0;
+}
+```
+This works as expected for simple lists. However if the list contains other elements (such as `<br>`) the selector may not behave as expected because it selects every other *element* not every other list item.  This is a subtle but common error causing unexpected styling.
